@@ -45,7 +45,7 @@ function TerminalBlock({
       className="h-full flex flex-col overflow-hidden cursor-text"
       onClick={() => inputRef.current?.focus()}
     >
-      <div className="terminal-scroll flex-1 overflow-y-auto flex flex-col gap-0.5 text-[13px] sm:text-sm px-36 py-20 min-h-0">
+      <div className="terminal-scroll flex-1 overflow-y-auto flex flex-col gap-0.5 text-[13px] sm:text-sm pl-44 pr-36 py-20 min-h-0">
         <TerminalLine>
           <span className="block text-center text-primary/95 text-[14px] sm:text-base font-bold">
             ---------- CIA Expedients: CLASIFIED ----------
@@ -176,10 +176,10 @@ export default function Home() {
       <div
         className="crt-screen absolute flex flex-col text-primary"
         style={{
-          left: '21%',
-          top: '5%',
-          width: '44%',
-          height: '62%',
+          left: '20%',
+          top: '4%',
+          width: '48%',
+          height: '68%',
           zIndex: 1,
         }}
       >
