@@ -45,9 +45,9 @@ function TerminalBlock({
       className="h-full flex flex-col overflow-hidden cursor-text"
       onClick={() => inputRef.current?.focus()}
     >
-      <div className="terminal-scroll flex-1 overflow-y-auto flex flex-col gap-0.5 text-[13px] sm:text-sm pl-44 pr-36 py-20 min-h-0">
+      <div className="terminal-scroll flex-1 overflow-y-auto flex flex-col gap-0.5 text-[13px] sm:text-sm 2k:text-lg pl-44 pr-36 2k:pl-72 2k:pr-64 py-20 2k:py-32 min-h-0">
         <TerminalLine>
-          <span className="block text-center text-primary/95 text-[14px] sm:text-base font-bold">
+          <span className="block text-center text-primary/95 text-[14px] sm:text-base 2k:text-xl font-bold">
             ---------- CIA Expedients: CLASIFIED ----------
           </span>
         </TerminalLine>
@@ -56,9 +56,9 @@ function TerminalBlock({
         <TerminalLine>/ca</TerminalLine>
         <TerminalLine>/twitter</TerminalLine>
         {lines}
-        <div className="flex items-center gap-0.5">
+        <div className="flex items-center gap-0.5 2k:gap-1">
           <span className="text-primary">{input || '\u00A0'}</span>
-          <span className="cursor-blink inline-block w-2 h-3 bg-primary rounded-sm" />
+          <span className="cursor-blink inline-block w-2 h-3 2k:w-2.5 2k:h-4 bg-primary rounded-sm" />
         </div>
       </div>
       <div ref={bottomRef} />
@@ -89,7 +89,7 @@ function FilesView({
   const filename = CRYPTICS_FILES[fileIndex];
   const src = `/cryptics/${encodeURIComponent(filename)}`;
   return (
-    <div className="h-full flex flex-col items-center justify-center gap-4 overflow-y-auto text-[13px] sm:text-sm px-36 py-20">
+    <div className="h-full flex flex-col items-center justify-center gap-4 overflow-y-auto text-[13px] sm:text-sm 2k:text-lg px-36 py-20 2k:px-56 2k:py-32">
       <img
         src={src}
         alt={`Cryptic ${fileIndex + 1}`}
@@ -174,7 +174,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ background: '#3a5a40' }}>
       <div
-        className="crt-screen absolute flex flex-col text-primary"
+        className="crt-screen crt-screen-2k absolute flex flex-col text-primary"
         style={{
           left: '20%',
           top: '4%',
