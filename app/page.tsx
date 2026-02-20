@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 const CRYPTICS_FILES = [
   'Crypti 4.png',
@@ -116,6 +116,13 @@ export default function Home() {
   const [showFiles, setShowFiles] = useState(false);
   const [fileIndex, setFileIndex] = useState(0);
   const [lines, setLines] = useState<React.ReactNode[]>([]);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.15;
+    }
+  }, []);
 
   const handleCommand = useCallback((raw: string) => {
     const cmd = raw.trim().toLowerCase();
@@ -172,7 +179,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ background: '#3a5a40' }}>
+    <div 
+      className="min-h-screen relative overflow-hidden" 
+      style={{ background: '#3a5a40' }}
+      onClick={() => {
+        if (audioRef.current && audioRef.current.paused) {
+          audioRef.current.volume = 0.15;
+          audioRef.current.play().catch(() => {});
+        }
+      }}
+    >
+      <audio ref={audioRef} loop autoPlay>
+        <source src="/background-music.mp3" type="audio/mpeg" />
+      </audio>
       <div
         className="crt-screen crt-screen-2k absolute flex flex-col text-primary"
         style={{
