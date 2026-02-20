@@ -120,7 +120,7 @@ export default function Home() {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.15;
+      audioRef.current.volume = 0.4;
     }
   }, []);
 
@@ -184,7 +184,7 @@ export default function Home() {
       style={{ background: '#3a5a40' }}
       onClick={() => {
         if (audioRef.current && audioRef.current.paused) {
-          audioRef.current.volume = 0.15;
+          audioRef.current.volume = 0.4;
           audioRef.current.play().catch(() => {});
         }
       }}
